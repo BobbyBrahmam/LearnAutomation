@@ -16,14 +16,14 @@ import io.cucumber.java.Scenario;
 
 public class TestBase {
 
-	public static WebDriver driver;
+	public static WebDriver driver; 
 	public static Properties prop;
 
 	public TestBase() {
 		try {
 			prop = new Properties();
 			FileInputStream file = new FileInputStream(
-"E:\\Programming\\workspace\\SeleniumCucumberBDDV2\\src\\main\\java\\com\\qa\\configuration\\Config.properties");
+"E:\\Programming\\LearnAutomation\\SeleniumCucumberBDDV2\\src\\main\\java\\com\\qa\\configuration\\Config.properties");
 			prop.load(file);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -36,7 +36,7 @@ public class TestBase {
 		String browserName = prop.getProperty("browser");
 
 		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "E:\\Programming\\chromedriver_win32\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "E:\\Programming\\Latest_Jars\\chromedriver_win32\\chromedriver.exe");
 			driver = new ChromeDriver();
 		}
 
